@@ -2488,11 +2488,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\PickleballTournamentAPI\\PickleballTournamentAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\PickleballTournamentAPI.csproj",
       "projectName": "PickleballTournamentAPI",
-      "projectPath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\PickleballTournamentAPI\\PickleballTournamentAPI.csproj",
+      "projectPath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\PickleballTournamentAPI.csproj",
       "packagesPath": "C:\\Users\\Dung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\PickleballTournamentAPI\\obj\\",
+      "outputPath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
