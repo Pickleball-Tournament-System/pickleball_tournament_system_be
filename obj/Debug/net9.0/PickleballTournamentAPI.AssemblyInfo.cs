@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PickleballTournamentAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa013b4c0e96870c1613087c57e66cd8b68e5fb0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3165955964906671d68de2ee0501db23b328bce")]
 [assembly: System.Reflection.AssemblyProductAttribute("PickleballTournamentAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PickleballTournamentAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

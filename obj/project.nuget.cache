@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "U7/OD0knuNo=",
+  "dgSpecHash": "utiEXyv87oM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\PickleballTournamentAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dung\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Dung\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Dung\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.0\\microsoft.aspnetcore.authentication.2.3.0.nupkg.sha512",
     "C:\\Users\\Dung\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
