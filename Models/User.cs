@@ -15,6 +15,18 @@ public class User
     [BsonElement("passwordHash")]
     public string PasswordHash { get; set; } = string.Empty;
 
+    [BsonElement("fullName")]
+    public string? FullName { get; set; }
+
+    [BsonElement("gender")]
+    public string? Gender { get; set; }
+
+    [BsonElement("dateOfBirth")]
+    public DateTime? DateOfBirth { get; set; }
+
+    [BsonElement("phoneNumber")]
+    public string? PhoneNumber { get; set; }
+
     [BsonElement("role")]
-    public string Role { get; set; } = "Player";
+    public string Role { get; set; } = "Player"; 
 }

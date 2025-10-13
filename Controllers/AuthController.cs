@@ -17,7 +17,7 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] UserRegisterDto dto)
     {
-        var success = await _auth.RegisterAsync(dto.Email, dto.Password);
+        var success = await _auth.RegisterAsync(dto);
         if (!success) return BadRequest("User already exists.");
         return Ok("Registered successfully!");
     }
@@ -31,10 +31,18 @@ public class AuthController : ControllerBase
     }
 }
 
+// === DTOs ===
+
 public class UserRegisterDto
 {
     public string Email { get; set; } = "";
     public string Password { get; set; } = "";
+
+    // Thêm các thông tin cá nhân
+    public string FullName { get; set; } = "";
+    public string Gender { get; set; } = "";
+    public DateTime? DateOfBirth { get; set; }
+    public string PhoneNumber { get; set; } = "";
 }
 
 public class UserLoginDto

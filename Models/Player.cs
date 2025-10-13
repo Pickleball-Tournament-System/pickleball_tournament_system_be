@@ -9,11 +9,23 @@ public class Player
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    [BsonElement("name")]
-    public string Name { get; set; } = string.Empty;
+    [BsonElement("FullName")]
+    public string FullName { get; set; } = "";
 
-    [BsonElement("email")]
-    public string Email { get; set; } = string.Empty;
+    [BsonElement("Gender")]
+    public string Gender { get; set; } = "";
+
+    [BsonElement("DateOfBirth")]
+    public DateTime DateOfBirth { get; set; }
+
+    [BsonElement("Phone")]
+    public string Phone { get; set; } = "";
+
+    [BsonElement("Email")]
+    public string Email { get; set; } = "";
+
+    [BsonElement("Role")]
+    public string Role { get; set; } = "Player";
 
     [BsonElement("wins")]
     public int Wins { get; set; } = 0;
