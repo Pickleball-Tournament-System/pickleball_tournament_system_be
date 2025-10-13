@@ -66,10 +66,314 @@
           }
         }
       }
+    },
+    "/api/Matches": {
+      "post": {
+        "tags": [
+          "Matches"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Matches/doubles": {
+      "post": {
+        "tags": [
+          "Matches"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoubleMatchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoubleMatchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DoubleMatchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Players": {
+      "get": {
+        "tags": [
+          "Players"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Players"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Players/{id}": {
+      "get": {
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Player"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "DoubleMatchRequest": {
+        "type": "object",
+        "properties": {
+          "teamAPlayer1Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamAPlayer2Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamBPlayer1Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamBPlayer2Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "scoreA": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scoreB": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Match": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "playerAId": {
+            "type": "string",
+            "nullable": true
+          },
+          "playerBId": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamAPlayer1Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamAPlayer2Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamBPlayer1Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamBPlayer2Id": {
+            "type": "string",
+            "nullable": true
+          },
+          "scoreA": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scoreB": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "winnerTeam": {
+            "type": "string",
+            "nullable": true
+          },
+          "matchType": {
+            "type": "string",
+            "nullable": true
+          },
+          "matchDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Player": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "wins": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "losses": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "UserLoginDto": {
         "type": "object",
         "properties": {
