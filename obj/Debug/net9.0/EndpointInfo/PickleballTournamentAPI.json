@@ -149,35 +149,6 @@
             "description": "OK"
           }
         }
-      },
-      "post": {
-        "tags": [
-          "Players"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Player"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Player"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Player"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/api/Players/{id}": {
@@ -219,17 +190,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Player"
+                "$ref": "#/components/schemas/User"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Player"
+                "$ref": "#/components/schemas/User"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Player"
+                "$ref": "#/components/schemas/User"
               }
             }
           }
@@ -348,10 +319,18 @@
         },
         "additionalProperties": false
       },
-      "Player": {
+      "User": {
         "type": "object",
         "properties": {
           "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordHash": {
             "type": "string",
             "nullable": true
           },
@@ -365,27 +344,16 @@
           },
           "dateOfBirth": {
             "type": "string",
-            "format": "date-time"
-          },
-          "phone": {
-            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
-          "email": {
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           },
           "role": {
             "type": "string",
             "nullable": true
-          },
-          "wins": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "losses": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

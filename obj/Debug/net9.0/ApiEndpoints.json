@@ -85,22 +85,6 @@
   },
   {
     "ContainingType": "PickleballTournamentAPI.Controllers.PlayersController",
-    "Method": "Create",
-    "RelativePath": "api/Players",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "player",
-        "Type": "PickleballTournamentAPI.Models.Player",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PickleballTournamentAPI.Controllers.PlayersController",
     "Method": "GetById",
     "RelativePath": "api/Players/{id}",
     "HttpMethod": "GET",
@@ -130,7 +114,7 @@
       },
       {
         "Name": "updated",
-        "Type": "PickleballTournamentAPI.Models.Player",
+        "Type": "PickleballTournamentAPI.Models.User",
         "IsRequired": true
       }
     ],

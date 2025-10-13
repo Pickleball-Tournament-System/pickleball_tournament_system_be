@@ -8,7 +8,6 @@ namespace PickleballTournamentAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
 public class PlayersController : ControllerBase
 {
     private readonly MongoDBService _db;
@@ -18,41 +17,48 @@ public class PlayersController : ControllerBase
         _db = db;
     }
 
+    // ===== GET: Lấy tất cả người chơi =====
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var players = await _db.Players.Find(_ => true).ToListAsync();
+        var players = await _db.Users.Find(u => u.Role == "Player").ToListAsync();
         return Ok(players);
     }
 
+    // ===== GET: Lấy người chơi theo ID =====
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(string id)
     {
-        var player = await _db.Players.Find(p => p.Id == id).FirstOrDefaultAsync();
-        if (player == null) return NotFound();
+        var player = await _db.Users.Find(u => u.Id == id && u.Role == "Player").FirstOrDefaultAsync();
+        if (player == null)
+            return NotFound("Player not found");
         return Ok(player);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Player player)
-    {
-        await _db.Players.InsertOneAsync(player);
-        return Ok(player);
-    }
-
+    // ===== PUT: Cập nhật thông tin player =====
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(string id, [FromBody] Player updated)
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Update(string id, [FromBody] User updated)
     {
-        var result = await _db.Players.ReplaceOneAsync(p => p.Id == id, updated);
-        if (result.MatchedCount == 0) return NotFound();
-        return Ok("Updated successfully");
+        var existing = await _db.Users.Find(u => u.Id == id && u.Role == "Player").FirstOrDefaultAsync();
+        if (existing == null)
+            return NotFound("Player not found.");
+
+        updated.Id = id;
+        updated.Role = "Player"; // đảm bảo không bị đổi role
+
+        await _db.Users.ReplaceOneAsync(u => u.Id == id, updated);
+        return Ok("Player updated successfully.");
     }
 
+    // ===== DELETE: Xóa player =====
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(string id)
     {
-        var result = await _db.Players.DeleteOneAsync(p => p.Id == id);
-        if (result.DeletedCount == 0) return NotFound();
-        return Ok("Deleted successfully");
+        var result = await _db.Users.DeleteOneAsync(u => u.Id == id && u.Role == "Player");
+        if (result.DeletedCount == 0)
+            return NotFound("Player not found.");
+        return Ok("Player deleted successfully.");
     }
 }

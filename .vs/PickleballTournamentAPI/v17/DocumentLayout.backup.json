@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:controllers\\playerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|solutionrelative:controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41812E20-0DAD-4C32-8AE0-F9318071885F}|PickleballTournamentAPI.csproj|c:\\users\\dung\\onedrive\\desktop\\pickleball tournament system\\pickleball_tournament_system_be\\dtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T10:27:18.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MatchController.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Controllers\\MatchController.cs",
               "RelativeDocumentMoniker": "Controllers\\MatchController.cs",
@@ -50,38 +67,37 @@
               "RelativeToolTip": "Controllers\\MatchController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAADgvxYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T04:42:17.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T04:42:17.049Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Models\\Player.cs",
               "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Models\\Player.cs",
               "RelativeToolTip": "Models\\Player.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T04:41:20.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayersController.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Controllers\\PlayersController.cs",
               "RelativeDocumentMoniker": "Controllers\\PlayersController.cs",
               "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Controllers\\PlayersController.cs",
               "RelativeToolTip": "Controllers\\PlayersController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAiwCQAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwCYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T04:40:17.431Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -89,8 +105,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T04:18:16.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T04:18:16.561Z"
             },
             {
               "$type": "Document",
@@ -100,14 +115,14 @@
               "RelativeDocumentMoniker": "Services\\AuthService.cs",
               "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Services\\AuthService.cs",
               "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAEwDkAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T04:12:14.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -115,12 +130,11 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAwwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T04:06:53.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T04:06:53.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\DTOs\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterRequest.cs",
@@ -128,8 +142,7 @@
               "RelativeToolTip": "DTOs\\RegisterRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T04:06:29.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T04:06:29.17Z"
             }
           ]
         }
