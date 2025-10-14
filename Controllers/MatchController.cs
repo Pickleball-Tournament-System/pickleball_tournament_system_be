@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using PickleballTournamentAPI.Models;
 using PickleballTournamentAPI.Services;
-using PickleballTournamentAPI.DTOs;
 
 namespace PickleballTournamentAPI.Controllers;
 
@@ -19,91 +18,106 @@ public class MatchesController : ControllerBase
         _db = db;
     }
 
-    // === Trận đơn (đã có ở trước) ===
-    [HttpPost]
-    public async Task<IActionResult> CreateSingle([FromBody] Match match)
-    {
-        match.MatchType = "single";
-        match.WinnerTeam = match.ScoreA > match.ScoreB ? "A" : "B";
-        await _db.Matches.InsertOneAsync(match);
-
-        // Cập nhật win/loss
-        var winnerId = match.WinnerTeam == "A" ? match.PlayerAId : match.PlayerBId;
-        var loserId = match.WinnerTeam == "A" ? match.PlayerBId : match.PlayerAId;
-
-        if (winnerId != null)
-        {
-            var winner = await _db.Players.Find(p => p.Id == winnerId).FirstOrDefaultAsync();
-            if (winner != null)
-            {
-                winner.Wins++;
-                await _db.Players.ReplaceOneAsync(p => p.Id == winner.Id, winner);
-            }
-        }
-
-        if (loserId != null)
-        {
-            var loser = await _db.Players.Find(p => p.Id == loserId).FirstOrDefaultAsync();
-            if (loser != null)
-            {
-                loser.Losses++;
-                await _db.Players.ReplaceOneAsync(p => p.Id == loser.Id, loser);
-            }
-        }
-
-        return Ok(match);
-    }
-
-    // === Trận đôi mới ===
-    [HttpPost("doubles")]
-    public async Task<IActionResult> CreateDouble([FromBody] DoubleMatchRequest req)
-    {
-        var match = new Match
-        {
-            MatchType = "double",
-            TeamAPlayer1Id = req.TeamAPlayer1Id,
-            TeamAPlayer2Id = req.TeamAPlayer2Id,
-            TeamBPlayer1Id = req.TeamBPlayer1Id,
-            TeamBPlayer2Id = req.TeamBPlayer2Id,
-            ScoreA = req.ScoreA,
-            ScoreB = req.ScoreB,
-            WinnerTeam = req.ScoreA > req.ScoreB ? "A" : "B"
-        };
-
-        await _db.Matches.InsertOneAsync(match);
-
-        var teamAWon = req.ScoreA > req.ScoreB;
-
-        // Cập nhật kết quả cho cả 4 người
-        var playerIds = new List<string>
-        {
-            req.TeamAPlayer1Id,
-            req.TeamAPlayer2Id,
-            req.TeamBPlayer1Id,
-            req.TeamBPlayer2Id
-        };
-
-        var players = await _db.Players.Find(p => playerIds.Contains(p.Id!)).ToListAsync();
-
-        foreach (var player in players)
-        {
-            bool isTeamA = player.Id == req.TeamAPlayer1Id || player.Id == req.TeamAPlayer2Id;
-
-            if ((isTeamA && teamAWon) || (!isTeamA && !teamAWon))
-                player.Wins++;
-            else
-                player.Losses++;
-
-            await _db.Players.ReplaceOneAsync(p => p.Id == player.Id, player);
-        }
-
-        return Ok(match);
-    }
-
+    // ===== GET: Lấy tất cả trận đấu =====
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAllMatches()
     {
         var matches = await _db.Matches.Find(_ => true).ToListAsync();
         return Ok(matches);
+    }
+
+    // ===== GET: Lấy 1 trận đấu theo ID =====
+    [HttpGet("{id:length(24)}")]
+    public async Task<IActionResult> GetMatchById(string id)
+    {
+        var match = await _db.Matches.Find(m => m.Id == id).FirstOrDefaultAsync();
+        if (match == null)
+            return NotFound(new { message = "Match not found" });
+
+        // Gắn thông tin người chơi / đội
+        var playerIds = new List<string?>();
+
+        if (match.MatchType == "single")
+        {
+            playerIds.Add(match.PlayerAId);
+            playerIds.Add(match.PlayerBId);
+        }
+        else // double
+        {
+            playerIds.AddRange(new[] { match.TeamAPlayer1Id, match.TeamAPlayer2Id, match.TeamBPlayer1Id, match.TeamBPlayer2Id });
+        }
+
+        var players = await _db.Users
+            .Find(u => playerIds.Contains(u.Id))
+            .ToListAsync();
+
+        return Ok(new
+        {
+            match,
+            players
+        });
+    }
+
+    // ===== POST: Tạo trận đấu mới =====
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> CreateMatch([FromBody] Match match)
+    {
+        if (match.MatchType != "single" && match.MatchType != "double")
+            return BadRequest(new { message = "MatchType must be 'single' or 'double'." });
+
+        match.Id = null;
+        match.MatchDate = DateTime.UtcNow;
+        match.ScoreA = 0;
+        match.ScoreB = 0;
+        match.WinnerTeam = null;
+
+        await _db.Matches.InsertOneAsync(match);
+        return Ok(new { message = "Match created successfully.", match });
+    }
+
+    // ===== PUT: Cập nhật kết quả trận đấu =====
+    [HttpPut("{id:length(24)}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateMatch(string id, [FromBody] Match updated)
+    {
+        var existing = await _db.Matches.Find(m => m.Id == id).FirstOrDefaultAsync();
+        if (existing == null)
+            return NotFound(new { message = "Match not found" });
+
+        updated.Id = id;
+        updated.MatchDate = existing.MatchDate; // giữ nguyên ngày tạo
+
+        await _db.Matches.ReplaceOneAsync(m => m.Id == id, updated);
+        return Ok(new { message = "Match updated successfully.", match = updated });
+    }
+
+    // ===== PATCH: Cập nhật điểm số và xác định đội thắng =====
+    [HttpPatch("{id:length(24)}/result")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateResult(string id, [FromBody] Match result)
+    {
+        var match = await _db.Matches.Find(m => m.Id == id).FirstOrDefaultAsync();
+        if (match == null)
+            return NotFound(new { message = "Match not found" });
+
+        match.ScoreA = result.ScoreA;
+        match.ScoreB = result.ScoreB;
+        match.WinnerTeam = result.ScoreA > result.ScoreB ? "A" : result.ScoreA < result.ScoreB ? "B" : "Draw";
+
+        await _db.Matches.ReplaceOneAsync(m => m.Id == id, match);
+        return Ok(new { message = "Match result updated.", match });
+    }
+
+    // ===== DELETE: Xóa trận đấu =====
+    [HttpDelete("{id:length(24)}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteMatch(string id)
+    {
+        var result = await _db.Matches.DeleteOneAsync(m => m.Id == id);
+        if (result.DeletedCount == 0)
+            return NotFound(new { message = "Match not found" });
+
+        return Ok(new { message = "Match deleted successfully." });
     }
 }

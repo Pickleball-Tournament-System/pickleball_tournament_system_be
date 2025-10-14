@@ -33,7 +33,17 @@
   },
   {
     "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
-    "Method": "CreateSingle",
+    "Method": "GetAllMatches",
+    "RelativePath": "api/Matches",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
+    "Method": "CreateMatch",
     "RelativePath": "api/Matches",
     "HttpMethod": "POST",
     "IsController": true,
@@ -49,25 +59,73 @@
   },
   {
     "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
-    "Method": "GetAll",
-    "RelativePath": "api/Matches",
+    "Method": "GetMatchById",
+    "RelativePath": "api/Matches/{id}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
-    "Method": "CreateDouble",
-    "RelativePath": "api/Matches/doubles",
-    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "req",
-        "Type": "PickleballTournamentAPI.DTOs.DoubleMatchRequest",
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
+    "Method": "UpdateMatch",
+    "RelativePath": "api/Matches/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "updated",
+        "Type": "PickleballTournamentAPI.Models.Match",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
+    "Method": "DeleteMatch",
+    "RelativePath": "api/Matches/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.MatchesController",
+    "Method": "UpdateResult",
+    "RelativePath": "api/Matches/{id}/result",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "result",
+        "Type": "PickleballTournamentAPI.Models.Match",
         "IsRequired": true
       }
     ],
@@ -131,6 +189,32 @@
       {
         "Name": "id",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.TeamsController",
+    "Method": "GetTeams",
+    "RelativePath": "api/Teams",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PickleballTournamentAPI.Controllers.TeamsController",
+    "Method": "CreateTeam",
+    "RelativePath": "api/Teams",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PickleballTournamentAPI.DTOs.CreateTeamDto",
         "IsRequired": true
       }
     ],

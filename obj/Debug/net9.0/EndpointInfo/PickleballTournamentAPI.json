@@ -68,6 +68,16 @@
       }
     },
     "/api/Matches": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Matches"
@@ -96,10 +106,87 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Matches/{id}": {
       "get": {
         "tags": [
           "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 24,
+              "minLength": 24,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 24,
+              "minLength": 24,
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Match"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 24,
+              "minLength": 24,
+              "type": "string"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -108,26 +195,38 @@
         }
       }
     },
-    "/api/Matches/doubles": {
-      "post": {
+    "/api/Matches/{id}/result": {
+      "patch": {
         "tags": [
           "Matches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 24,
+              "minLength": 24,
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoubleMatchRequest"
+                "$ref": "#/components/schemas/Match"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/DoubleMatchRequest"
+                "$ref": "#/components/schemas/Match"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/DoubleMatchRequest"
+                "$ref": "#/components/schemas/Match"
               }
             }
           }
@@ -231,36 +330,64 @@
           }
         }
       }
+    },
+    "/api/Teams": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Teams"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTeamDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTeamDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTeamDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "DoubleMatchRequest": {
+      "CreateTeamDto": {
         "type": "object",
         "properties": {
-          "teamAPlayer1Id": {
+          "name": {
             "type": "string",
             "nullable": true
           },
-          "teamAPlayer2Id": {
-            "type": "string",
+          "players": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
-          },
-          "teamBPlayer1Id": {
-            "type": "string",
-            "nullable": true
-          },
-          "teamBPlayer2Id": {
-            "type": "string",
-            "nullable": true
-          },
-          "scoreA": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "scoreB": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
