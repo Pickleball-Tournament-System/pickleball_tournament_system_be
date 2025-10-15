@@ -50,8 +50,7 @@
               "RelativeToolTip": "DTOs\\CreateTeamDtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:38:21.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:38:21.426Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Controllers\\MatchController.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAUwGIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:31:03.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:31:03.707Z"
             },
             {
               "$type": "Document",
@@ -74,7 +72,7 @@
               "RelativeDocumentMoniker": "Controllers\\TeamsController.cs",
               "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\Controllers\\TeamsController.cs",
               "RelativeToolTip": "Controllers\\TeamsController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-14T15:17:13.445Z",
               "EditorCaption": ""
@@ -89,8 +87,7 @@
               "RelativeToolTip": "Models\\Team.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:16:38.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:16:38.315Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Services\\MongoDBService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:13:17.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:13:17.642Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "Models\\Match.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAwwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T15:08:17.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T15:08:17.536Z"
             },
             {
               "$type": "Document",
@@ -128,8 +123,7 @@
               "RelativeToolTip": "Controllers\\PlayersController.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAswDUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T04:40:17.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-13T04:40:17.431Z"
             }
           ]
         }

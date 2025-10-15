@@ -44,4 +44,5 @@ public class TeamsController : ControllerBase
         await _db.Teams.InsertOneAsync(newTeam);
         return Ok(newTeam);
     }
+
 }
