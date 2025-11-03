@@ -1,0 +1,65 @@
+# ## HỆ ĐIỀU HÀNH VÀ CÔNG CỤ ##
+# Bỏ qua các file rác của hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ## IDE VISUAL STUDIO ##
+# Cài đặt riêng của người dùng Visual Studio
+*.suo
+*.user
+*.sln.docstates
+
+# Thư mục .vs chứa cache và cài đặt của Visual Studio (rất quan trọng phải bỏ qua)
+.vs/
+
+# ## IDE VS CODE VÀ RIDER ##
+# Cài đặt riêng của VS Code
+.vscode/
+
+# Cài đặt riêng của JetBrains Rider
+.idea/
+
+# ## THƯ MỤC BUILD VÀ KẾT QUẢ BIÊN DỊCH ##
+# Đây là các thư mục quan trọng nhất cần bỏ qua
+# Chứa các file .dll, .exe sau khi build
+[Bb]in/
+[Oo]bj/
+
+# Thư mục build và publish
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Pp]ublish/
+[Pp]ublishes/
+
+# ## PACKAGE VÀ DEPENDENCY ##
+# Thư mục 'packages' dùng cho kiểu quản lý NuGet cũ (packages.config)
+packages/
+
+# Các file package được tạo ra
+*.nupkg
+
+# ## FILE LOG VÀ DATABASE ##
+# Các file log chung
+*.log
+[Ll]ogs/
+[Ll]og/
+
+# Các file database cục bộ (SQL Server Express)
+*.mdf
+*.ldf
+
+# ## FILE DÀNH RIÊNG CHO ASP.NET ##
+# Dữ liệu của ứng dụng, thường chứa file upload, database, logs...
+# Rất quan trọng: Không nên đưa thư mục này lên source control
+App_Data/
+
+# File cấu hình riêng của người dùng (chứa connection string, v.v.)
+*.config.user
+*.pubxml.user
+
+# ## FILE KẾT QUẢ TEST ##
+TestResults/
+*.trx
