@@ -12,7 +12,13 @@ builder.Services.Configure<MongoDBSettings>(
     builder.Configuration.GetSection("MongoDB"));
 builder.Services.AddSingleton<MongoDBService>();
 builder.Services.AddScoped<AuthService>();
+
+// Thêm dịch vụ này để VnPayService có thể lấy IP Address
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<VnPayService>();
 builder.Services.AddControllers();
+
 
 // ======= Swagger =======
 builder.Services.AddEndpointsApiExplorer();

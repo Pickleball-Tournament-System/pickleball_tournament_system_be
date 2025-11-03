@@ -18,4 +18,6 @@ public class MongoDBService
     public IMongoCollection<Match> Matches => _database.GetCollection<Match>("Matches");
     public IMongoCollection<Team> Teams => _database.GetCollection<Team>("Teams");
 
+    public IMongoCollection<Tournament> Tournaments => _database.GetCollection<Tournament>("Tournaments");
+    public IMongoCollection<PaymentTransaction> Transactions => _database.GetCollection<PaymentTransaction>("Transactions");
 }

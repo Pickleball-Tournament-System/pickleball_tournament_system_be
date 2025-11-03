@@ -12,4 +12,5 @@ public class Team
     public string Name { get; set; } = null!;
     public List<string> Players { get; set; } = new();
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public string CreatedById { get; internal set; }
 }

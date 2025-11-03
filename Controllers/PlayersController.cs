@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using PickleballTournamentAPI.DTOs.TeamsDto;
 using PickleballTournamentAPI.Models;
 using PickleballTournamentAPI.Services;
 
@@ -37,18 +38,66 @@ public class PlayersController : ControllerBase
 
     // ===== PUT: Cập nhật thông tin player =====
     [HttpPut("{id}")]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Update(string id, [FromBody] User updated)
+    public async Task<IActionResult> Update(string id, [FromBody] PlayerUpdateDto updatedDto)
     {
+        // 1. Kiểm tra xem player có tồn tại không (logic này giữ nguyên)
         var existing = await _db.Users.Find(u => u.Id == id && u.Role == "Player").FirstOrDefaultAsync();
         if (existing == null)
             return NotFound("Player not found.");
 
-        updated.Id = id;
-        updated.Role = "Player"; // đảm bảo không bị đổi role
+        // 2. Tạo danh sách các định nghĩa cập nhật
+        var updateDefinitionList = new List<UpdateDefinition<User>>();
 
-        await _db.Users.ReplaceOneAsync(u => u.Id == id, updated);
-        return Ok("Player updated successfully.");
+        // 3. Xây dựng danh sách cập nhật từ DTO
+        // Logic này gần như cũ, nhưng giờ ta đọc từ 'updatedDto'
+
+        if (updatedDto.FullName != null)
+        {
+            updateDefinitionList.Add(Builders<User>.Update.Set(u => u.FullName, updatedDto.FullName));
+        }
+
+        if (updatedDto.Email != null)
+        {
+            updateDefinitionList.Add(Builders<User>.Update.Set(u => u.Email, updatedDto.Email));
+        }
+
+        if (updatedDto.Gender != null)
+        {
+            updateDefinitionList.Add(Builders<User>.Update.Set(u => u.Gender, updatedDto.Gender));
+        }
+
+        if (updatedDto.DateOfBirth.HasValue)
+        {
+            updateDefinitionList.Add(Builders<User>.Update.Set(u => u.DateOfBirth, updatedDto.DateOfBirth.Value));
+        }
+
+        if (updatedDto.PhoneNumber != null)
+        {
+            updateDefinitionList.Add(Builders<User>.Update.Set(u => u.PhoneNumber, updatedDto.PhoneNumber));
+        }
+
+        // 4. Kiểm tra xem có gì để cập nhật không
+        if (updateDefinitionList.Count == 0)
+        {
+            return BadRequest("No valid fields provided for update.");
+        }
+
+        // 5. Kết hợp và thực hiện cập nhật (logic này giữ nguyên)
+        var combinedUpdate = Builders<User>.Update.Combine(updateDefinitionList);
+
+        try
+        {
+            await _db.Users.UpdateOneAsync(
+                u => u.Id == id, // Điều kiện lọc
+                combinedUpdate   // Các trường cần cập nhật
+            );
+
+            return Ok("Player updated successfully.");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
 
     // ===== DELETE: Xóa player =====
