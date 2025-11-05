@@ -50,8 +50,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAAwE0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:28:47.68Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:28:47.68Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Services\\VnPayHelper\\VnPayCompare.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:25:13.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:25:13.534Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "Services\\VnPayHelper\\VnPayLibrary.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAWwBQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:21:55.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:21:55.188Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "Services\\MongoDBService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAB8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:17:34.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:17:34.058Z"
             },
             {
               "$type": "Document",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "Controllers\\TournamentsController.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAADwv5AAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T08:48:59.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T08:48:59.638Z"
             },
             {
               "$type": "Document",
@@ -115,8 +110,7 @@
               "RelativeToolTip": "Services\\VnPayService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T08:48:12.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T08:48:12.51Z"
             },
             {
               "$type": "Document",
@@ -126,7 +120,7 @@
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Dung\\OneDrive\\Desktop\\Pickleball Tournament System\\pickleball_tournament_system_be\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-03T08:44:40.464Z",
               "EditorCaption": ""
